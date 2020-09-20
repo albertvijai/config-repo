@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: gw-get-route
+          uri: http://httpbin.org:80
+          predicates:
+            - Path=/get
+        - id: bd-route
+          uri: http://baeldung.com
+          predicates:
+            - Path=/bd
